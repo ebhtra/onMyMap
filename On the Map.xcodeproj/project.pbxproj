@@ -8,11 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		E404A16F1B7148A200254797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A16E1B7148A200254797 /* AppDelegate.swift */; };
-		E404A1711B7148A200254797 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A1701B7148A200254797 /* ViewController.swift */; };
 		E404A1741B7148A200254797 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E404A1721B7148A200254797 /* Main.storyboard */; };
 		E404A1761B7148A200254797 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E404A1751B7148A200254797 /* Images.xcassets */; };
 		E404A1791B7148A200254797 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E404A1771B7148A200254797 /* LaunchScreen.xib */; };
 		E404A1851B7148A200254797 /* On_the_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A1841B7148A200254797 /* On_the_MapTests.swift */; };
+		E404A1A01B714B3A00254797 /* list.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E404A18F1B714B3A00254797 /* list.pdf */; };
+		E404A1A11B714B3A00254797 /* map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E404A1901B714B3A00254797 /* map.pdf */; };
+		E404A1A21B714B3A00254797 /* OnTheMap_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1911B714B3A00254797 /* OnTheMap_1024.png */; };
+		E404A1A31B714B3A00254797 /* OnTheMap_120.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1921B714B3A00254797 /* OnTheMap_120.png */; };
+		E404A1A41B714B3A00254797 /* OnTheMap_152.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1931B714B3A00254797 /* OnTheMap_152.png */; };
+		E404A1A51B714B3A00254797 /* OnTheMap_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1941B714B3A00254797 /* OnTheMap_180.png */; };
+		E404A1A61B714B3A00254797 /* OnTheMap_29.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1951B714B3A00254797 /* OnTheMap_29.png */; };
+		E404A1A71B714B3A00254797 /* OnTheMap_40.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1961B714B3A00254797 /* OnTheMap_40.png */; };
+		E404A1A81B714B3A00254797 /* OnTheMap_512.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1971B714B3A00254797 /* OnTheMap_512.png */; };
+		E404A1A91B714B3A00254797 /* OnTheMap_58.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1981B714B3A00254797 /* OnTheMap_58.png */; };
+		E404A1AA1B714B3A00254797 /* OnTheMap_76.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1991B714B3A00254797 /* OnTheMap_76.png */; };
+		E404A1AB1B714B3A00254797 /* OnTheMap_80.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A19A1B714B3A00254797 /* OnTheMap_80.png */; };
+		E404A1AC1B714B3A00254797 /* pin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19B1B714B3A00254797 /* pin.pdf */; };
+		E404A1AD1B714B3A00254797 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19C1B714B3A00254797 /* Roboto-Medium.ttf */; };
+		E404A1AE1B714B3A00254797 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19D1B714B3A00254797 /* Roboto-Regular.ttf */; };
+		E404A1AF1B714B3A00254797 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */; };
+		E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A1B11B714FEF00254797 /* LoginViewController.swift */; };
+		E404A1B41B71584300254797 /* u_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1B31B71584300254797 /* u_180.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +46,30 @@
 		E404A1691B7148A200254797 /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E404A16D1B7148A200254797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E404A16E1B7148A200254797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E404A1701B7148A200254797 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E404A1731B7148A200254797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E404A1751B7148A200254797 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E404A1781B7148A200254797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E404A17E1B7148A200254797 /* On the MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the MapTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E404A1831B7148A200254797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E404A1841B7148A200254797 /* On_the_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_MapTests.swift; sourceTree = "<group>"; };
+		E404A18F1B714B3A00254797 /* list.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = list.pdf; sourceTree = "<group>"; };
+		E404A1901B714B3A00254797 /* map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = map.pdf; sourceTree = "<group>"; };
+		E404A1911B714B3A00254797 /* OnTheMap_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_1024.png; sourceTree = "<group>"; };
+		E404A1921B714B3A00254797 /* OnTheMap_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_120.png; sourceTree = "<group>"; };
+		E404A1931B714B3A00254797 /* OnTheMap_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_152.png; sourceTree = "<group>"; };
+		E404A1941B714B3A00254797 /* OnTheMap_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_180.png; sourceTree = "<group>"; };
+		E404A1951B714B3A00254797 /* OnTheMap_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_29.png; sourceTree = "<group>"; };
+		E404A1961B714B3A00254797 /* OnTheMap_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_40.png; sourceTree = "<group>"; };
+		E404A1971B714B3A00254797 /* OnTheMap_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_512.png; sourceTree = "<group>"; };
+		E404A1981B714B3A00254797 /* OnTheMap_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_58.png; sourceTree = "<group>"; };
+		E404A1991B714B3A00254797 /* OnTheMap_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_76.png; sourceTree = "<group>"; };
+		E404A19A1B714B3A00254797 /* OnTheMap_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_80.png; sourceTree = "<group>"; };
+		E404A19B1B714B3A00254797 /* pin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pin.pdf; sourceTree = "<group>"; };
+		E404A19C1B714B3A00254797 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		E404A19D1B714B3A00254797 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		E404A1B11B714FEF00254797 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E404A1B31B71584300254797 /* u_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = u_180.png; path = ../u_180.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +111,13 @@
 		E404A16B1B7148A200254797 /* On the Map */ = {
 			isa = PBXGroup;
 			children = (
+				E404A1B11B714FEF00254797 /* LoginViewController.swift */,
 				E404A16E1B7148A200254797 /* AppDelegate.swift */,
-				E404A1701B7148A200254797 /* ViewController.swift */,
 				E404A1721B7148A200254797 /* Main.storyboard */,
 				E404A1751B7148A200254797 /* Images.xcassets */,
 				E404A1771B7148A200254797 /* LaunchScreen.xib */,
 				E404A16C1B7148A200254797 /* Supporting Files */,
+				E404A18E1B714B3A00254797 /* on the map assets */,
 			);
 			path = "On the Map";
 			sourceTree = "<group>";
@@ -110,6 +145,30 @@
 				E404A1831B7148A200254797 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E404A18E1B714B3A00254797 /* on the map assets */ = {
+			isa = PBXGroup;
+			children = (
+				E404A1B31B71584300254797 /* u_180.png */,
+				E404A18F1B714B3A00254797 /* list.pdf */,
+				E404A1901B714B3A00254797 /* map.pdf */,
+				E404A1911B714B3A00254797 /* OnTheMap_1024.png */,
+				E404A1921B714B3A00254797 /* OnTheMap_120.png */,
+				E404A1931B714B3A00254797 /* OnTheMap_152.png */,
+				E404A1941B714B3A00254797 /* OnTheMap_180.png */,
+				E404A1951B714B3A00254797 /* OnTheMap_29.png */,
+				E404A1961B714B3A00254797 /* OnTheMap_40.png */,
+				E404A1971B714B3A00254797 /* OnTheMap_512.png */,
+				E404A1981B714B3A00254797 /* OnTheMap_58.png */,
+				E404A1991B714B3A00254797 /* OnTheMap_76.png */,
+				E404A19A1B714B3A00254797 /* OnTheMap_80.png */,
+				E404A19B1B714B3A00254797 /* pin.pdf */,
+				E404A19C1B714B3A00254797 /* Roboto-Medium.ttf */,
+				E404A19D1B714B3A00254797 /* Roboto-Regular.ttf */,
+				E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */,
+			);
+			path = "on the map assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +251,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E404A1A61B714B3A00254797 /* OnTheMap_29.png in Resources */,
+				E404A1A11B714B3A00254797 /* map.pdf in Resources */,
+				E404A1A01B714B3A00254797 /* list.pdf in Resources */,
+				E404A1AD1B714B3A00254797 /* Roboto-Medium.ttf in Resources */,
 				E404A1741B7148A200254797 /* Main.storyboard in Resources */,
+				E404A1A71B714B3A00254797 /* OnTheMap_40.png in Resources */,
+				E404A1AE1B714B3A00254797 /* Roboto-Regular.ttf in Resources */,
 				E404A1791B7148A200254797 /* LaunchScreen.xib in Resources */,
+				E404A1AC1B714B3A00254797 /* pin.pdf in Resources */,
+				E404A1AA1B714B3A00254797 /* OnTheMap_76.png in Resources */,
+				E404A1AB1B714B3A00254797 /* OnTheMap_80.png in Resources */,
+				E404A1A21B714B3A00254797 /* OnTheMap_1024.png in Resources */,
+				E404A1A91B714B3A00254797 /* OnTheMap_58.png in Resources */,
+				E404A1A31B714B3A00254797 /* OnTheMap_120.png in Resources */,
+				E404A1AF1B714B3A00254797 /* Roboto-Thin.ttf in Resources */,
+				E404A1A41B714B3A00254797 /* OnTheMap_152.png in Resources */,
+				E404A1A51B714B3A00254797 /* OnTheMap_180.png in Resources */,
+				E404A1B41B71584300254797 /* u_180.png in Resources */,
+				E404A1A81B714B3A00254797 /* OnTheMap_512.png in Resources */,
 				E404A1761B7148A200254797 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E404A1711B7148A200254797 /* ViewController.swift in Sources */,
+				E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */,
 				E404A16F1B7148A200254797 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "On the Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "On the Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
