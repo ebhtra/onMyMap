@@ -4,23 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>FacebookAppID</key>
-	<string>365362206864879</string>
-	<key>FacebookDisplayName</key>
-	<string>Udacity</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.udacity.OnTheMap</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb365362206864879</string>
-				<string>fb365362206864879onthemap</string>
-				<string>onthemap</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,8 +18,29 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.udacity.OnTheMap</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb365362206864879</string>
+				<string>fb365362206864879onthemap</string>
+				<string>onthemap</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>365362206864879</string>
+	<key>FacebookDisplayName</key>
+	<string>Udacity</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

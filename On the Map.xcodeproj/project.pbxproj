@@ -33,6 +33,16 @@
 		E404A1AF1B714B3A00254797 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */; };
 		E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A1B11B714FEF00254797 /* LoginViewController.swift */; };
 		E404A1B41B71584300254797 /* u_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1B31B71584300254797 /* u_180.png */; };
+		E451925F1B949B8300A68D27 /* list_32.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925C1B949B8300A68D27 /* list_32.png */; };
+		E45192601B949B8300A68D27 /* list_64.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925D1B949B8300A68D27 /* list_64.png */; };
+		E45192611B949B8300A68D27 /* list_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925E1B949B8300A68D27 /* list_128.png */; };
+		E4E1A6431B859CF000D0ED47 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */; };
+		E4E1A6451B85B14300D0ED47 /* StudentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6441B85B14300D0ED47 /* StudentsList.swift */; };
+		E4E1A6471B871B6D00D0ED47 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */; };
+		E4E1A6491B871C6100D0ED47 /* ListTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6481B871C6100D0ED47 /* ListTabViewController.swift */; };
+		E4E1A67D1B8F8FF500D0ED47 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */; };
+		E4E1A67F1B90D74400D0ED47 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */; };
+		E4E7EA1B1B96DB0000CFB4AB /* OnTheMapConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +86,16 @@
 		E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		E404A1B11B714FEF00254797 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E404A1B31B71584300254797 /* u_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = u_180.png; path = ../u_180.png; sourceTree = "<group>"; };
+		E451925C1B949B8300A68D27 /* list_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_32.png; sourceTree = "<group>"; };
+		E451925D1B949B8300A68D27 /* list_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_64.png; sourceTree = "<group>"; };
+		E451925E1B949B8300A68D27 /* list_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_128.png; sourceTree = "<group>"; };
+		E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		E4E1A6441B85B14300D0ED47 /* StudentsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsList.swift; sourceTree = "<group>"; };
+		E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
+		E4E1A6481B871C6100D0ED47 /* ListTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTabViewController.swift; sourceTree = "<group>"; };
+		E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapConvenience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +140,15 @@
 			isa = PBXGroup;
 			children = (
 				E403D4F01B7B36A1005B6C61 /* Main.storyboard */,
+				E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */,
+				E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */,
+				E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */,
+				E4E1A6481B871C6100D0ED47 /* ListTabViewController.swift */,
 				E404A1B11B714FEF00254797 /* LoginViewController.swift */,
+				E4E1A6441B85B14300D0ED47 /* StudentsList.swift */,
+				E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */,
 				E403D4EB1B792024005B6C61 /* OnTheMapClient.swift */,
+				E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */,
 				E404A16E1B7148A200254797 /* AppDelegate.swift */,
 				E404A1751B7148A200254797 /* Images.xcassets */,
 				E404A1771B7148A200254797 /* LaunchScreen.xib */,
@@ -161,6 +188,9 @@
 		E404A18E1B714B3A00254797 /* on the map assets */ = {
 			isa = PBXGroup;
 			children = (
+				E451925C1B949B8300A68D27 /* list_32.png */,
+				E451925D1B949B8300A68D27 /* list_64.png */,
+				E451925E1B949B8300A68D27 /* list_128.png */,
 				E404A1B31B71584300254797 /* u_180.png */,
 				E404A18F1B714B3A00254797 /* list.pdf */,
 				E404A1901B714B3A00254797 /* map.pdf */,
@@ -262,12 +292,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E451925F1B949B8300A68D27 /* list_32.png in Resources */,
 				E403D4F11B7B36A1005B6C61 /* Main.storyboard in Resources */,
 				E404A1A61B714B3A00254797 /* OnTheMap_29.png in Resources */,
 				E404A1A11B714B3A00254797 /* map.pdf in Resources */,
 				E404A1A01B714B3A00254797 /* list.pdf in Resources */,
 				E404A1AD1B714B3A00254797 /* Roboto-Medium.ttf in Resources */,
 				E404A1A71B714B3A00254797 /* OnTheMap_40.png in Resources */,
+				E45192601B949B8300A68D27 /* list_64.png in Resources */,
 				E404A1AE1B714B3A00254797 /* Roboto-Regular.ttf in Resources */,
 				E404A1791B7148A200254797 /* LaunchScreen.xib in Resources */,
 				E404A1AC1B714B3A00254797 /* pin.pdf in Resources */,
@@ -279,6 +311,7 @@
 				E404A1AF1B714B3A00254797 /* Roboto-Thin.ttf in Resources */,
 				E404A1A41B714B3A00254797 /* OnTheMap_152.png in Resources */,
 				E404A1A51B714B3A00254797 /* OnTheMap_180.png in Resources */,
+				E45192611B949B8300A68D27 /* list_128.png in Resources */,
 				E404A1B41B71584300254797 /* u_180.png in Resources */,
 				E404A1A81B714B3A00254797 /* OnTheMap_512.png in Resources */,
 				E404A1761B7148A200254797 /* Images.xcassets in Resources */,
@@ -299,9 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E1A6451B85B14300D0ED47 /* StudentsList.swift in Sources */,
+				E4E1A67D1B8F8FF500D0ED47 /* TabController.swift in Sources */,
+				E4E1A6471B871B6D00D0ED47 /* MapTabViewController.swift in Sources */,
+				E4E1A6431B859CF000D0ED47 /* StudentLocation.swift in Sources */,
 				E403D4EC1B792024005B6C61 /* OnTheMapClient.swift in Sources */,
+				E4E1A67F1B90D74400D0ED47 /* StudentTableViewCell.swift in Sources */,
 				E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */,
+				E4E7EA1B1B96DB0000CFB4AB /* OnTheMapConvenience.swift in Sources */,
 				E404A16F1B7148A200254797 /* AppDelegate.swift in Sources */,
+				E4E1A6491B871C6100D0ED47 /* ListTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,15 +465,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/eh/Downloads/FacebookSDKs-iOS-20150810",
-					"$(PROJECT_DIR)/On",
-					the,
-					Map,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -444,15 +482,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/eh/Downloads/FacebookSDKs-iOS-20150810",
-					"$(PROJECT_DIR)/On",
-					the,
-					Map,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
