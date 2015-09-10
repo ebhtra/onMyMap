@@ -33,6 +33,7 @@
 		E404A1AF1B714B3A00254797 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */; };
 		E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404A1B11B714FEF00254797 /* LoginViewController.swift */; };
 		E404A1B41B71584300254797 /* u_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E404A1B31B71584300254797 /* u_180.png */; };
+		E42B60081BA1642F008391FD /* AddLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B60071BA1642F008391FD /* AddLocationVC.swift */; };
 		E451925F1B949B8300A68D27 /* list_32.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925C1B949B8300A68D27 /* list_32.png */; };
 		E45192601B949B8300A68D27 /* list_64.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925D1B949B8300A68D27 /* list_64.png */; };
 		E45192611B949B8300A68D27 /* list_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925E1B949B8300A68D27 /* list_128.png */; };
@@ -86,6 +87,7 @@
 		E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		E404A1B11B714FEF00254797 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E404A1B31B71584300254797 /* u_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = u_180.png; path = ../u_180.png; sourceTree = "<group>"; };
+		E42B60071BA1642F008391FD /* AddLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationVC.swift; sourceTree = "<group>"; };
 		E451925C1B949B8300A68D27 /* list_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_32.png; sourceTree = "<group>"; };
 		E451925D1B949B8300A68D27 /* list_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_64.png; sourceTree = "<group>"; };
 		E451925E1B949B8300A68D27 /* list_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_128.png; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				E403D4F01B7B36A1005B6C61 /* Main.storyboard */,
+				E42B60071BA1642F008391FD /* AddLocationVC.swift */,
 				E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */,
 				E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */,
 				E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */,
@@ -342,6 +345,7 @@
 				E4E7EA1B1B96DB0000CFB4AB /* OnTheMapConvenience.swift in Sources */,
 				E404A16F1B7148A200254797 /* AppDelegate.swift in Sources */,
 				E4E1A6491B871C6100D0ED47 /* ListTabViewController.swift in Sources */,
+				E42B60081BA1642F008391FD /* AddLocationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

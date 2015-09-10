@@ -13,10 +13,9 @@ class TabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let pinIcon = UIBarButtonItem(image: UIImage(named: "pin"), style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        let pinIcon = UIBarButtonItem(image: UIImage(named: "pin"), style: UIBarButtonItemStyle.Plain, target: self, action: "handlePinTap")
         let reloadIcon = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "handleRefresh")
         navigationItem.setRightBarButtonItems([reloadIcon, pinIcon], animated: true)
-        println("yo")
     }
 
     func handleRefresh() {
@@ -29,4 +28,8 @@ class TabController: UITabBarController {
         }
     }
     
+    func handlePinTap() {
+        let locationEditor = storyboard!.instantiateViewControllerWithIdentifier("AddLocationVC") as! AddLocationVC
+        navigationController?.pushViewController(locationEditor, animated: true)
+    }
 }
