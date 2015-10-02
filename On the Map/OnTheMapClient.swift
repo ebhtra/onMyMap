@@ -10,10 +10,11 @@ import Foundation
 
 class OnTheMapClient: NSObject {
     
-    static let sharedInstance = OnTheMapClient()
+    static let sharedInstance = OnTheMapClient()  // Singleton instance of the class
    
-    let batchSize = 10 // how many students to add per query?
-   
+    let batchSize = 100 // how many students to add per query?
+    
+    // GET students from Parse
     func populateRosterTask(method: String, parameters: [String : AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         /* 1. Set the parameters */
@@ -40,6 +41,7 @@ class OnTheMapClient: NSObject {
         return task
     }
     
+    // GET a user from Parse using a Udacity unique key as ID
     func userSearchTask(userKey: String, completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.BaseParseRequest + "?where=%7B%22uniqueKey%22%3A%22" + userKey + "%22%7D")!)
@@ -60,6 +62,7 @@ class OnTheMapClient: NSObject {
         return task
     }
 
+    // PUT/update a user's info on Parse
     func updateUserTask(dict: [String: AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let objID = dict["objectId"] as! String
@@ -85,6 +88,8 @@ class OnTheMapClient: NSObject {
         return task
     }
     
+    // GET a user's name from Udacity using uniqueKey as ID
+    // This method takes the user's partial info as a variable parameter so that it can update it
     func getUdacityUsernameTask(var dict: [String: AnyObject], completionHandler: (result: [String: AnyObject], error: NSError?) -> Void) -> NSURLSessionDataTask {
         let id = dict["uniqueKey"] as! String
         let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.UdacityBaseSecureUrl + "users/" + id)!)
@@ -102,10 +107,12 @@ class OnTheMapClient: NSObject {
                     completionHandler(result: dict, error: error)
                 } else {
                     if let err = parsedResult?.valueForKey("error") as? String {
-                        println("error returned by Parse")
-                        completionHandler(result: dict, error: nil) //  add NSERROR
+                        let nsErr = NSError(domain: "Udacity parsing error", code: 0, userInfo: [NSLocalizedDescriptionKey: err])
+                        completionHandler(result: dict, error: nsErr)
                     } else {
+                        // use presence of "user" dictionary in parsed results as a test of success
                         if let user = parsedResult?.valueForKey("user") as? NSDictionary {
+                            // add all known user info to the user's dict, so that it can be POSTed to Parse API
                             if let firstName = user["first_name"] as? String {
                                 dict["firstName"] = firstName
                             } else {
@@ -116,10 +123,11 @@ class OnTheMapClient: NSObject {
                             } else {
                                 dict["lastName"] = ""
                             }
-                            completionHandler(result: dict, error: nil) // add NSERROR
-                        } else {
                             completionHandler(result: dict, error: nil)
-                            println("couldn't find user in udacity") // /////
+                        } else {
+                            let errString = "The \"user\" dictionary is missing from this Udacity profile"
+                            let nsErr = NSError(domain: "Udacity parsing error", code: 1, userInfo: [NSLocalizedDescriptionKey: errString])
+                            completionHandler(result: dict, error: nsErr)
                         }
                     }
                 }
@@ -127,9 +135,9 @@ class OnTheMapClient: NSObject {
         }
         task.resume()
         return task
-
     }
     
+    // add a new user to Parse API
     func postToParseTask(dict: [String: AnyObject], completionHandler: (success: Bool, errorString: String?) -> Void) -> NSURLSessionDataTask {
         let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.BaseParseRequest)!)
         var jsonError: NSError?
@@ -144,7 +152,9 @@ class OnTheMapClient: NSObject {
                 completionHandler(success: false, errorString: error.localizedDescription)
             } else {
                 var parseError: NSError?
+                // parse the results
                 let results = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                // use presence of "createdAt" key as a test of success
                 if let update = results["createdAt"] as? String {
                     completionHandler(success: true, errorString: nil)
                 } else {
@@ -157,8 +167,8 @@ class OnTheMapClient: NSObject {
     }
     
     class func logOut(completionHandler: (success: Bool, errorString: String?) -> Void) {
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.UdacityBaseSecureUrl + "session")!)
+        // end the Udacity session using a DELETE request along with the cached session cookie
+        let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.UdacityBaseSecureUrl + OnTheMapClient.Methods.UdacitySession)!)
         request.HTTPMethod = "DELETE"
         var xsrfCookie: NSHTTPCookie?
         let sharedCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
@@ -179,6 +189,7 @@ class OnTheMapClient: NSObject {
                 /* trim extra udacity chars */
                 let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
                 let parsedResult = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                // use the presence of the "session" key in the parsed results as a test of success
                 if let _ = parsedResult["session"] as? [String: AnyObject] {
                     completionHandler(success: true, errorString: nil)
                 } else {
@@ -189,7 +200,7 @@ class OnTheMapClient: NSObject {
         task.resume()
     }
     
-    /* Helper function: Given a dictionary of parameters, convert to a string for a url. 
+    /* Helper function: Given a dictionary of parameters, convert to a string for a URL.
        Copied and pasted from Jarrod Parkes' Movie Manager app on Udacity */
     class func escapedParameters(parameters: [String : AnyObject]) -> String {
         

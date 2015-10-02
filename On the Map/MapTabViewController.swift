@@ -14,8 +14,10 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     var annotations = [MKPointAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // store a batch of students from the Parse API and load them into map
         OnTheMapClient.sharedInstance.refreshRoster() { success in
             if success {
                 self.loadPins()
@@ -24,8 +26,6 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     }
     
     func loadPins() {
-        println("starting to load pins")
-        
         // begin by removing old pins
         let pinList = mapView.annotations
         mapView.removeAnnotations(pinList)
@@ -39,7 +39,8 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
             // Build a CL coordinate
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
-            // Create the annotation and set its coordinate, title, and subtitle properties
+            // Create the annotation and set its coordinate,
+            //      title, and subtitle properties
             var annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             // Make it work for Madonna or Gandhi
@@ -50,13 +51,13 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
             annotations.append(annotation)
         }
         // When the array is complete,  add the annotations to the map.
-        println("there are \(annotations.count) annotations now")
         mapView.addAnnotations(annotations)
     }
     
     // MARK: - MKMapViewDelegate
     
-    // Tack on a right callout accessory view for each annotation. This is taken right from the Udacity "Pin Sample" app:
+    // Tack on a right callout accessory view for each annotation.
+    //      This is taken right from the Udacity "Pin Sample" app:
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         
@@ -77,15 +78,12 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
         return pinView
     }
     
-    
-    // delegate method called upon user tapping accessory view, opening the provided webpage outside of the app
+    // delegate method called upon user tapping accessory view,
+    //    opening the provided webpage outside of the app
     func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if control == annotationView.rightCalloutAccessoryView {
             UIApplication.sharedApplication().openURL(NSURL(string: annotationView.annotation.subtitle!)!)
         }
     }
-
-    
-
 }

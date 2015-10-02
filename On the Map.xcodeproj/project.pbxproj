@@ -60,12 +60,12 @@
 /* Begin PBXFileReference section */
 		E403D4EB1B792024005B6C61 /* OnTheMapClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapClient.swift; sourceTree = "<group>"; };
 		E403D4ED1B7AB709005B6C61 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20150810/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		E403D4F01B7B36A1005B6C61 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E403D4F01B7B36A1005B6C61 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "On the Map/Main.storyboard"; sourceTree = "<group>"; };
 		E403D4F21B7B37DC005B6C61 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E404A1691B7148A200254797 /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E404A16D1B7148A200254797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E404A16E1B7148A200254797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E404A1751B7148A200254797 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E404A16E1B7148A200254797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "On the Map/AppDelegate.swift"; sourceTree = "<group>"; };
+		E404A1751B7148A200254797 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "On the Map/Images.xcassets"; sourceTree = "<group>"; };
 		E404A1781B7148A200254797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E404A17E1B7148A200254797 /* On the MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the MapTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E404A1831B7148A200254797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		E404A1601B7148A100254797 = {
 			isa = PBXGroup;
 			children = (
-				E404A16B1B7148A200254797 /* On the Map */,
+				E45ED6D21BBED3720079022C /* On the Map */,
 				E404A1811B7148A200254797 /* On the MapTests */,
 				E404A16A1B7148A200254797 /* Products */,
 			);
@@ -140,30 +140,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E404A16B1B7148A200254797 /* On the Map */ = {
-			isa = PBXGroup;
-			children = (
-				E403D4F01B7B36A1005B6C61 /* Main.storyboard */,
-				E42B60071BA1642F008391FD /* AddLocationVC.swift */,
-				E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */,
-				E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */,
-				E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */,
-				E4E1A6481B871C6100D0ED47 /* ListTabViewController.swift */,
-				E404A1B11B714FEF00254797 /* LoginViewController.swift */,
-				E4E1A6441B85B14300D0ED47 /* StudentsList.swift */,
-				E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */,
-				E403D4EB1B792024005B6C61 /* OnTheMapClient.swift */,
-				E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */,
-				E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */,
-				E404A16E1B7148A200254797 /* AppDelegate.swift */,
-				E404A1751B7148A200254797 /* Images.xcassets */,
-				E404A1771B7148A200254797 /* LaunchScreen.xib */,
-				E404A16C1B7148A200254797 /* Supporting Files */,
-				E404A18E1B714B3A00254797 /* on the map assets */,
-			);
-			path = "On the Map";
-			sourceTree = "<group>";
-		};
 		E404A16C1B7148A200254797 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +148,7 @@
 				E404A16D1B7148A200254797 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "On the Map";
 			sourceTree = "<group>";
 		};
 		E404A1811B7148A200254797 /* On the MapTests */ = {
@@ -215,7 +192,59 @@
 				E404A19D1B714B3A00254797 /* Roboto-Regular.ttf */,
 				E404A19E1B714B3A00254797 /* Roboto-Thin.ttf */,
 			);
-			path = "on the map assets";
+			name = "on the map assets";
+			path = "On the Map/on the map assets";
+			sourceTree = "<group>";
+		};
+		E45ED6D11BBED2780079022C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E404A1B11B714FEF00254797 /* LoginViewController.swift */,
+				E4E1A67C1B8F8FF500D0ED47 /* TabController.swift */,
+				E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */,
+				E4E1A6481B871C6100D0ED47 /* ListTabViewController.swift */,
+				E42B60071BA1642F008391FD /* AddLocationVC.swift */,
+			);
+			name = Controllers;
+			path = "On the Map";
+			sourceTree = "<group>";
+		};
+		E45ED6D21BBED3720079022C /* On the Map */ = {
+			isa = PBXGroup;
+			children = (
+				E403D4F01B7B36A1005B6C61 /* Main.storyboard */,
+				E404A16E1B7148A200254797 /* AppDelegate.swift */,
+				E45ED6D41BBED4DC0079022C /* Model */,
+				E45ED6D31BBED4C70079022C /* View */,
+				E45ED6D11BBED2780079022C /* Controllers */,
+				E404A1751B7148A200254797 /* Images.xcassets */,
+				E404A1771B7148A200254797 /* LaunchScreen.xib */,
+				E404A18E1B714B3A00254797 /* on the map assets */,
+				E404A16C1B7148A200254797 /* Supporting Files */,
+			);
+			name = "On the Map";
+			sourceTree = "<group>";
+		};
+		E45ED6D31BBED4C70079022C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4E1A67E1B90D74400D0ED47 /* StudentTableViewCell.swift */,
+			);
+			name = View;
+			path = "On the Map";
+			sourceTree = "<group>";
+		};
+		E45ED6D41BBED4DC0079022C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4E1A6441B85B14300D0ED47 /* StudentsList.swift */,
+				E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */,
+				E403D4EB1B792024005B6C61 /* OnTheMapClient.swift */,
+				E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */,
+				E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */,
+			);
+			name = Model;
+			path = "On the Map";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +407,7 @@
 				E404A1781B7148A200254797 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = "On the Map";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

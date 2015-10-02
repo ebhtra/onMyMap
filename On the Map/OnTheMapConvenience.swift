@@ -11,8 +11,8 @@ import UIKit
 
 extension OnTheMapClient {
     
+    
     func loginThruUdacity(dict: [String: AnyObject], completionHandler: (success: Bool, error: String?) -> Void) {
-        
                
         var urlString = OnTheMapClient.Constants.UdacityBaseSecureUrl + OnTheMapClient.Methods.UdacitySession
         let url = NSURL(string: urlString)!
@@ -24,11 +24,13 @@ extension OnTheMapClient {
         request.HTTPBody = NSJSONSerialization.dataWithJSONObject(dict, options: nil, error: &jsonError)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, downloadError in
             if let error = downloadError {
+                
                 completionHandler(success: false, error: error.localizedDescription)
+                
             } else {
                 var parsingError: NSError?
                 
-                /* trim extra 5 Udacity chars */
+                // trim extra 5 Udacity chars
                 let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
                 
                 let parsedResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
@@ -39,8 +41,10 @@ extension OnTheMapClient {
                     if let err = parsedResult?.valueForKey("error") as? String {
                         completionHandler(success: false, error: err)
                     } else {
+                        // use the presence of "account["key"]" as the test of success
                         if let account = parsedResult?.valueForKey("account") as? NSDictionary {
                             if let userKey = account["key"] as? String {
+                                
                                 // search Parse for current user
                                 self.findUserInParse(userKey) { success, errorString in
                                     if success {
@@ -63,12 +67,14 @@ extension OnTheMapClient {
     }
     
     func findUserInParse(key: String, completion: (success: Bool, error: String?) -> Void) {
-        
+        // check the parsed results of Client task for a user's unique key. Update user's known info accordingly
         userSearchTask(key) { jsonResult, error in
             if let results = jsonResult.valueForKey("results") as? [[String: AnyObject]] {
                 if results.isEmpty {
+                    // user is not stored in Parse yet
                     StudentsList.studentInfoDict = ["uniqueKey": "\(key)"]
                 } else {
+                    // store what is listed on Parse for user
                     StudentsList.studentInfoDict = results[0]
                 }
                 completion(success: true, error: nil)
@@ -102,6 +108,7 @@ extension OnTheMapClient {
             if error != nil {
                 completion(success: false)
             } else {
+                // An array of students was returned from Parse. Store each one as a StudentLocation struct in StudentsList  
                 if let results = jsonResult.valueForKey("results") as? [[String: AnyObject]] {
                     for dict in results {
                         let newStudent = StudentLocation(dict: dict)

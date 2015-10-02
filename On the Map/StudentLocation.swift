@@ -8,17 +8,18 @@
 
 import Foundation
 
+// Each student/user will have one of these associated with himself
 struct StudentLocation {
-    var createdAt: String
+    var createdAt: String  // Parse API date for User's initial info
     var firstName: String?
     var lastName: String?
     var latitude: Double
     var longitude: Double
-    var mapString: String?
-    var mediaURL: String
-    let objectId: String
-    var uniqueKey: String?
-    var updatedAt: String
+    var mapString: String?  // Text User used to locate himself
+    var mediaURL: String    // Text User entered to locate a URL
+    let objectId: String  // Parse API unique User identifier
+    var uniqueKey: String?  // Udacity unique User identifier
+    var updatedAt: String  // Parse API date for User's updated info
     
     init(dict: [String: AnyObject]) {
         createdAt = dict["createdAt"] as! String

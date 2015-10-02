@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TabController: UITabBarController {
+class TabController: UITabBarController, StudentAgentDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // right navigation bar button items
         let pinIcon = UIBarButtonItem(image: UIImage(named: "pin"), style: UIBarButtonItemStyle.Plain, target: self, action: "handlePinTap")
         let reloadIcon = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addStudents")
         navigationItem.setRightBarButtonItems([reloadIcon, pinIcon], animated: true)
@@ -38,9 +38,21 @@ class TabController: UITabBarController {
             }
         }
     }
-    
+    // Display an AddLocationVC for user to enter info, when user hits 'pin' button
     func handlePinTap() {
         let locationEditor = storyboard!.instantiateViewControllerWithIdentifier("AddLocationVC") as! AddLocationVC
+        locationEditor.delegate = self
         navigationController?.pushViewController(locationEditor, animated: true)
+    }
+    
+    // MARK: - StudentAgentDelegate method
+    //   --called upon successful POST/PUT of user info to Parse API
+    func moveStudentToFront() {
+        StudentsList.roster = []
+        addStudents()
+        // pop the AddLocation VC off stack
+        dispatch_async(dispatch_get_main_queue()) {
+            self.navigationController!.popViewControllerAnimated(true)
+        }
     }
 }

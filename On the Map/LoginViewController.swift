@@ -29,10 +29,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         super.viewDidLoad()
         
         // Log out of any previously Facebook-authenticated session
-        // --May wish to instead complete login since already authorized
+        // --(May wish to instead complete login since already authorized)
         if FBSDKAccessToken.currentAccessToken() != nil {
             FBSDKLoginManager().logOut()
         }
+        
+        // clear out any previous list of students
+        StudentsList.roster = []
         
         // Set up the tap recognizer
         tapRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")

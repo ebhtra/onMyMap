@@ -10,14 +10,14 @@ import UIKit
 
 class ListTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var table = UITableView()
+    @IBOutlet weak var table = UITableView() // need reference to force reload
     
     override func viewWillAppear(animated: Bool) {
-        println("viewWillAppear in list tab vc")
         super.viewWillAppear(animated)
         table!.reloadData()
     }
     
+    // MARK: - UITableViewDelegate methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StudentsList.roster.count

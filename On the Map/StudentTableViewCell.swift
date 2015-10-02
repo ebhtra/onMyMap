@@ -9,9 +9,8 @@
 import UIKit
 
 class StudentTableViewCell: UITableViewCell {
-
-   
-    @IBOutlet weak var studentName: UILabel!
+    // A basic, reusable table view cell
     
+    @IBOutlet weak var studentName: UILabel!
     
 }
