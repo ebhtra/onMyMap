@@ -37,6 +37,7 @@
 		E451925F1B949B8300A68D27 /* list_32.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925C1B949B8300A68D27 /* list_32.png */; };
 		E45192601B949B8300A68D27 /* list_64.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925D1B949B8300A68D27 /* list_64.png */; };
 		E45192611B949B8300A68D27 /* list_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925E1B949B8300A68D27 /* list_128.png */; };
+		E45ED6CF1BBB04470079022C /* OnTheMapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */; };
 		E4E1A6431B859CF000D0ED47 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */; };
 		E4E1A6451B85B14300D0ED47 /* StudentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6441B85B14300D0ED47 /* StudentsList.swift */; };
 		E4E1A6471B871B6D00D0ED47 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */; };
@@ -91,6 +92,7 @@
 		E451925C1B949B8300A68D27 /* list_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_32.png; sourceTree = "<group>"; };
 		E451925D1B949B8300A68D27 /* list_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_64.png; sourceTree = "<group>"; };
 		E451925E1B949B8300A68D27 /* list_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_128.png; sourceTree = "<group>"; };
+		E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapConstants.swift; sourceTree = "<group>"; };
 		E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		E4E1A6441B85B14300D0ED47 /* StudentsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsList.swift; sourceTree = "<group>"; };
 		E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				E4E1A6441B85B14300D0ED47 /* StudentsList.swift */,
 				E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */,
 				E403D4EB1B792024005B6C61 /* OnTheMapClient.swift */,
+				E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */,
 				E4E7EA1A1B96DB0000CFB4AB /* OnTheMapConvenience.swift */,
 				E404A16E1B7148A200254797 /* AppDelegate.swift */,
 				E404A1751B7148A200254797 /* Images.xcassets */,
@@ -342,6 +345,7 @@
 				E403D4EC1B792024005B6C61 /* OnTheMapClient.swift in Sources */,
 				E4E1A67F1B90D74400D0ED47 /* StudentTableViewCell.swift in Sources */,
 				E404A1B21B714FEF00254797 /* LoginViewController.swift in Sources */,
+				E45ED6CF1BBB04470079022C /* OnTheMapConstants.swift in Sources */,
 				E4E7EA1B1B96DB0000CFB4AB /* OnTheMapConvenience.swift in Sources */,
 				E404A16F1B7148A200254797 /* AppDelegate.swift in Sources */,
 				E4E1A6491B871C6100D0ED47 /* ListTabViewController.swift in Sources */,

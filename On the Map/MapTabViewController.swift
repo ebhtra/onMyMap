@@ -14,49 +14,50 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     var annotations = [MKPointAnnotation]()
-    
-  //  override func viewDidLoad() {
-  //      super.viewDidLoad()
- //       println(" viewDidLoad in map tab VC")
-  //
- //   }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        annotations = []
-        OnTheMapClient.sharedInstance.loadTheMap(self)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        OnTheMapClient.sharedInstance.refreshRoster() { success in
+            if success {
+                self.loadPins()
+            }
+        }
     }
     
     func loadPins() {
-       // println("now in loadMap in mapTabVC, loading \(StudentsList.roster.count) students into map")
+        println("starting to load pins")
+        
+        // begin by removing old pins
+        let pinList = mapView.annotations
+        mapView.removeAnnotations(pinList)
+        annotations = []
+        
+        // rebuild the array of pins from scratch
         for student in StudentsList.roster {
-            
             let lat = CLLocationDegrees(student.latitude)
             let long = CLLocationDegrees(student.longitude)
             
-            // The lat and long are used to create a CLLocationCoordinates2D instance.
+            // Build a CL coordinate
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
-            // Here we create the annotation and set its coordinate, title, and subtitle properties
+            // Create the annotation and set its coordinate, title, and subtitle properties
             var annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
+            // Make it work for Madonna or Gandhi
             annotation.title = (student.firstName == nil ? "" : student.firstName!) + " " + (student.lastName == nil ? "" : student.lastName!)
             annotation.subtitle = student.mediaURL
             
-            // Finally we place the annotation in an array of annotations.
+            // Add to the array of annotations
             annotations.append(annotation)
         }
-        
-        // When the array is complete, we add the annotations to the map.
+        // When the array is complete,  add the annotations to the map.
+        println("there are \(annotations.count) annotations now")
         mapView.addAnnotations(annotations)
-        
     }
     
     // MARK: - MKMapViewDelegate
     
-    // Here we create a view with a "right callout accessory view". You might choose to look into other
-    // decoration alternatives. Notice the similarity between this method and the cellForRowAtIndexPath
-    // method in TableViewDataSource.
+    // Tack on a right callout accessory view for each annotation. This is taken right from the Udacity "Pin Sample" app:
+    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         
         let reuseId = "pin"
@@ -77,13 +78,11 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    // This delegate method is implemented to respond to taps. It opens the system browser
-    // to the URL specified in the annotationViews subtitle property.
+    // delegate method called upon user tapping accessory view, opening the provided webpage outside of the app
     func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if control == annotationView.rightCalloutAccessoryView {
-            let app = UIApplication.sharedApplication()
-            app.openURL(NSURL(string: annotationView.annotation.subtitle!)!)
+            UIApplication.sharedApplication().openURL(NSURL(string: annotationView.annotation.subtitle!)!)
         }
     }
 

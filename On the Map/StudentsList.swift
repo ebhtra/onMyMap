@@ -9,5 +9,11 @@
 import Foundation
 
 struct StudentsList {
+    // possibly useful user info to have at hand
+    //static var currentUser: StudentLocation?
+    //static var newUser: String?
+    static var studentInfoDict: [String: AnyObject]!
+    
+    // current list of students on the map
     static var roster = [StudentLocation]()
 }

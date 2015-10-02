@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../LoginViewController.swift">
-   </FileRef>
-   <FileRef
       location = "self:On the Map.xcodeproj">
    </FileRef>
 </Workspace>

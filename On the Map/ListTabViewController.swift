@@ -10,19 +10,12 @@ import UIKit
 
 class ListTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var table: UITableView!
-    var students: [StudentLocation]!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        students = StudentsList.roster
-    }
+    @IBOutlet weak var table = UITableView()
     
     override func viewWillAppear(animated: Bool) {
+        println("viewWillAppear in list tab vc")
         super.viewWillAppear(animated)
-
-        table.reloadData()
+        table!.reloadData()
     }
     
     
@@ -33,8 +26,7 @@ class ListTabViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("StudentCell", forIndexPath: indexPath) as! StudentTableViewCell
-        let studentStruct = students[indexPath.row]
-        
+        let studentStruct = StudentsList.roster[indexPath.row]
         cell.studentName.text = (studentStruct.firstName == nil ? "" : studentStruct.firstName!) + " "
             + (studentStruct.lastName == nil ? "" : studentStruct.lastName!)
         
@@ -42,7 +34,7 @@ class ListTabViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        UIApplication.sharedApplication().openURL(NSURL(string: students[indexPath.row].mediaURL)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: StudentsList.roster[indexPath.row].mediaURL)!)
     }
 
    
