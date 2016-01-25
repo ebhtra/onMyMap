@@ -84,28 +84,28 @@ class AddLocationVC: UIViewController, UITextFieldDelegate {
             mapView.alpha = CGFloat(0.4)
             
             let userInput = entryField.text
-            CLGeocoder().geocodeAddressString(userInput) { placemarkArray, nsError in
+            CLGeocoder().geocodeAddressString(userInput!) { placemarkArray, nsError in
                 if nsError != nil {
                     // There was a problem finding the user input location
                     self.indicator.hidden = true
                     self.mapView.alpha = CGFloat(1.0)
                     // Try to parse out some error info for the user
-                    if nsError.domain == "kCLErrorDomain" {
+                    if nsError!.domain == "kCLErrorDomain" {
                         var errorMsg = ""
-                        switch nsError.code {
+                        switch nsError!.code {
                         case 2: errorMsg = "The network connection failed"
                         case 8: errorMsg = "It returned no search results"
                         default: errorMsg = "Please try another spot"
                         }
                         self.showErrorAlert("Unable to find that location.", message: errorMsg)
                     } else {
-                        self.showErrorAlert("Unable to locate that spot.", message: nsError.localizedDescription)
+                        self.showErrorAlert("Unable to locate that spot.", message: nsError!.localizedDescription)
                     }
                     
                 } else {
                     // User input matched at least one map location. Use first one returned.
-                    let place = placemarkArray[0] as! CLPlacemark
-                    let coordinate = place.location.coordinate
+                    let place = placemarkArray![0]
+                    let coordinate = place.location!.coordinate
         
                     // Add known info to user's student dict
                     self.studentInfoDict["latitude"] = coordinate.latitude
@@ -113,7 +113,7 @@ class AddLocationVC: UIViewController, UITextFieldDelegate {
                     self.studentInfoDict["mapString"] = userInput
                     
                     // Zoom in the map to a pin with user's location
-                    var annotation = MKPointAnnotation()
+                    let annotation = MKPointAnnotation()
                     annotation.coordinate = coordinate
                     self.mapView.region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(CLLocationDegrees(0.03), CLLocationDegrees(0.03)))
                     self.mapView.addAnnotation(annotation)
@@ -140,7 +140,7 @@ class AddLocationVC: UIViewController, UITextFieldDelegate {
         } else {
             // Attempt to build a NSURL with the user's input
             let userInput = entryField.text
-            if let nsurl = NSURL(string: userInput) {
+            if let nsurl = NSURL(string: userInput!) {
                 // If the app can open the NSURL, add it to the known user info
                 if UIApplication.sharedApplication().canOpenURL(nsurl) {
                     studentInfoDict["mediaURL"] = userInput
@@ -151,7 +151,7 @@ class AddLocationVC: UIViewController, UITextFieldDelegate {
                                 self.showErrorAlert("Unable to update your location and link", message: error!.localizedDescription)
                             } else {
                                 // Use updatedAt as a test of successful PUT to Parse
-                                if let update = result["updatedAt"] as? String {
+                                if let _ = result["updatedAt"] as? String {
                                     // Call the delegate method in the Tab Controller, which will pop this screen
                                     self.delegate!.moveStudentToFront()
                                 }

@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     // Login button for Udacity:
     @IBAction func loginButtonTap(sender: UIButton) {
-        if emailField.text.isEmpty || passwordField.text.isEmpty {
+        if emailField.text!.isEmpty || passwordField.text!.isEmpty {
             showErrorAlert("Oops--", message: "You need to enter your Udacity email and password to launch \"On the Map.\"\nOr you can login with Facebook.")
         } else {
             view.endEditing(true)
@@ -79,7 +79,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             let pw = passwordField.text
             passwordField.text = ""
             // use the username and pw for Udacity authentication
-            let jsonDict = ["udacity": ["username": emailField.text, "password": pw]]
+            let jsonDict = ["udacity": ["username": emailField.text!, "password": pw!]]
+            
             udacityAuthenticate(jsonDict)
         }
     }
@@ -97,7 +98,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     // Authenticate. If authentication fails, display the error returned by the completion handler
-    func udacityAuthenticate(dict: [String: AnyObject]) {
+    func udacityAuthenticate(dict: [String: NSDictionary]) {
         OnTheMapClient.sharedInstance.loginThruUdacity(dict) { success, errorString in
             if success {
                 self.completeLogin()

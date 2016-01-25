@@ -14,14 +14,18 @@ extension OnTheMapClient {
     
     func loginThruUdacity(dict: [String: AnyObject], completionHandler: (success: Bool, error: String?) -> Void) {
                
-        var urlString = OnTheMapClient.Constants.UdacityBaseSecureUrl + OnTheMapClient.Methods.UdacitySession
+        let urlString = OnTheMapClient.Constants.UdacityBaseSecureUrl + OnTheMapClient.Methods.UdacitySession
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(URL: url)
-        var jsonError: NSError?
+        
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(dict, options: nil, error: &jsonError)
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(dict, options: [])
+        } catch _ as NSError {
+            request.HTTPBody = nil
+        }
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, downloadError in
             if let error = downloadError {
                 
@@ -31,11 +35,19 @@ extension OnTheMapClient {
                 var parsingError: NSError?
                 
                 // trim extra 5 Udacity chars
-                let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
+                let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5))
                 
-                let parsedResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                let parsedResult: AnyObject?
+                do {
+                    parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments)
+                } catch let error as NSError {
+                    parsingError = error
+                    parsedResult = nil
+                } catch {
+                    fatalError()
+                }
                 
-                if let error = parsingError {
+                if let _ = parsingError {
                     completionHandler(success: false, error: "problems parsing the JSON")
                 } else {
                     if let err = parsedResult?.valueForKey("error") as? String {

@@ -18,7 +18,7 @@ class OnTheMapClient: NSObject {
     func populateRosterTask(method: String, parameters: [String : AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         /* 1. Set the parameters */
-        var mutableParameters = parameters
+        let mutableParameters = parameters
         
         /* 2/3. Build the URL and configure the request */
         let urlString = Constants.BaseParseRequest + method + OnTheMapClient.escapedParameters(mutableParameters)
@@ -31,8 +31,7 @@ class OnTheMapClient: NSObject {
             if error != nil {
                 completionHandler(result: nil, error: error!)
             } else {
-                var parseError: NSError?
-                let results = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                let results = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                 completionHandler(result: results, error: nil)
             }
         }
@@ -52,8 +51,7 @@ class OnTheMapClient: NSObject {
             if error != nil {
                 completionHandler(result: nil, error: error!)
             } else {
-                var parseError: NSError?
-                let results = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                let results = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                 completionHandler(result: results, error: nil)
             }
         }
@@ -66,20 +64,22 @@ class OnTheMapClient: NSObject {
     func updateUserTask(dict: [String: AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let objID = dict["objectId"] as! String
-        var jsonError: NSError?
         let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.BaseParseRequest + "/" + objID)!)
         request.HTTPMethod = "PUT"
         request.addValue(OnTheMapClient.Constants.ParseAppID, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(OnTheMapClient.Constants.ParseRESTkey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(dict, options: nil, error: &jsonError)
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(dict, options: [])
+        } catch _ as NSError {
+            request.HTTPBody = nil
+        }
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil {
                 completionHandler(result: nil, error: error!)
             } else {
-                var parseError: NSError?
-                let results = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                let results = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                 completionHandler(result: results, error: nil)
             }
         }
@@ -100,8 +100,16 @@ class OnTheMapClient: NSObject {
             } else {
                 var parseError: NSError?
                 /* trim extra udacity chars */
-                let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
-                let parsedResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parseError)
+                let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5))
+                let parsedResult: AnyObject?
+                do {
+                    parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments)
+                } catch let error as NSError {
+                    parseError = error
+                    parsedResult = nil
+                } catch {
+                    fatalError()
+                }
                 
                 if let error = parseError {
                     completionHandler(result: dict, error: error)
@@ -140,22 +148,25 @@ class OnTheMapClient: NSObject {
     // add a new user to Parse API
     func postToParseTask(dict: [String: AnyObject], completionHandler: (success: Bool, errorString: String?) -> Void) -> NSURLSessionDataTask {
         let request = NSMutableURLRequest(URL: NSURL(string: OnTheMapClient.Constants.BaseParseRequest)!)
-        var jsonError: NSError?
         request.HTTPMethod = "POST"
         request.addValue(OnTheMapClient.Constants.ParseAppID, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(OnTheMapClient.Constants.ParseRESTkey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(dict, options: nil, error: &jsonError)
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(dict, options: [])
+        } catch _ as NSError {
+            request.HTTPBody = nil
+        }
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil {
-                completionHandler(success: false, errorString: error.localizedDescription)
+                completionHandler(success: false, errorString: error!.localizedDescription)
             } else {
-                var parseError: NSError?
+                
                 // parse the results
-                let results = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                let results = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                 // use presence of "createdAt" key as a test of success
-                if let update = results["createdAt"] as? String {
+                if let _ = results["createdAt"] as? String {
                     completionHandler(success: true, errorString: nil)
                 } else {
                     completionHandler(success: false, errorString: "Could not place your mind on the map.")
@@ -172,23 +183,23 @@ class OnTheMapClient: NSObject {
         request.HTTPMethod = "DELETE"
         var xsrfCookie: NSHTTPCookie?
         let sharedCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        for cookie in sharedCookieStorage.cookies as! [NSHTTPCookie] {
+        for cookie in sharedCookieStorage.cookies! {
             if cookie.name == "XSRF-TOKEN" {
                 xsrfCookie = cookie
             }
         }
         if let xsrfCookie = xsrfCookie {
-            request.setValue(xsrfCookie.value!, forHTTPHeaderField: "X-XSRF-TOKEN")
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
         }
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil {
-                completionHandler(success: false, errorString: error.localizedDescription)
+                completionHandler(success: false, errorString: error!.localizedDescription)
             } else {
-                var parseError: NSError?
+               
                 /* trim extra udacity chars */
-                let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
-                let parsedResult = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parseError) as! NSDictionary
+                let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5))
+                let parsedResult = (try! NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                 // use the presence of the "session" key in the parsed results as a test of success
                 if let _ = parsedResult["session"] as? [String: AnyObject] {
                     completionHandler(success: true, errorString: nil)
@@ -219,7 +230,7 @@ class OnTheMapClient: NSObject {
             
         }
         
-        return (!urlVars.isEmpty ? "?" : "") + join("&", urlVars)
+        return (!urlVars.isEmpty ? "?" : "") + urlVars.joinWithSeparator("&")
     }
 
 }
