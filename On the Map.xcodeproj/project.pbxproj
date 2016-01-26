@@ -38,6 +38,7 @@
 		E45ED6CF1BBB04470079022C /* OnTheMapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */; };
 		E47594141C568D5C001B34D8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */; };
 		E47594161C5699D7001B34D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */; };
+		E47594181C56DAC3001B34D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */; };
 		E4E1A6431B859CF000D0ED47 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */; };
 		E4E1A6451B85B14300D0ED47 /* StudentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6441B85B14300D0ED47 /* StudentsList.swift */; };
 		E4E1A6471B871B6D00D0ED47 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */; };
@@ -93,6 +94,7 @@
 		E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapConstants.swift; sourceTree = "<group>"; };
 		E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		E4E1A6441B85B14300D0ED47 /* StudentsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsList.swift; sourceTree = "<group>"; };
 		E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			files = (
 				E47594161C5699D7001B34D8 /* FBSDKLoginKit.framework in Frameworks */,
 				E47594141C568D5C001B34D8 /* FBSDKCoreKit.framework in Frameworks */,
+				E47594181C56DAC3001B34D8 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +146,7 @@
 		E404A16C1B7148A200254797 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */,
 				E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */,
 				E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */,
 				E404A16D1B7148A200254797 /* Info.plist */,
@@ -512,6 +516,9 @@
 					"$(PROJECT_DIR)/On",
 					the,
 					Map,
+					"$(PROJECT_DIR)/On",
+					the,
+					Map,
 				);
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -530,6 +537,9 @@
 					"$(inherited)",
 					"/Users/eh/Downloads/FacebookSDKs-iOS-20150810",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/On",
+					the,
+					Map,
 					"$(PROJECT_DIR)/On",
 					the,
 					Map,
