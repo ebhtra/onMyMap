@@ -36,9 +36,9 @@
 		E45192601B949B8300A68D27 /* list_64.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925D1B949B8300A68D27 /* list_64.png */; };
 		E45192611B949B8300A68D27 /* list_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E451925E1B949B8300A68D27 /* list_128.png */; };
 		E45ED6CF1BBB04470079022C /* OnTheMapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */; };
-		E47594141C568D5C001B34D8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */; };
-		E47594161C5699D7001B34D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */; };
-		E47594181C56DAC3001B34D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */; };
+		E47989FB1C935BEF00DC7418 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47989FA1C935BEF00DC7418 /* FBSDKCoreKit.framework */; };
+		E47989FD1C935C0900DC7418 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47989FC1C935C0900DC7418 /* FBSDKLoginKit.framework */; };
+		E47989FF1C935C1300DC7418 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47989FE1C935C1300DC7418 /* FBSDKShareKit.framework */; };
 		E4E1A6431B859CF000D0ED47 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */; };
 		E4E1A6451B85B14300D0ED47 /* StudentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6441B85B14300D0ED47 /* StudentsList.swift */; };
 		E4E1A6471B871B6D00D0ED47 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */; };
@@ -92,9 +92,9 @@
 		E451925D1B949B8300A68D27 /* list_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_64.png; sourceTree = "<group>"; };
 		E451925E1B949B8300A68D27 /* list_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_128.png; sourceTree = "<group>"; };
 		E45ED6CE1BBB04470079022C /* OnTheMapConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapConstants.swift; sourceTree = "<group>"; };
-		E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E47989FA1C935BEF00DC7418 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Documents/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		E47989FC1C935C0900DC7418 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Documents/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		E47989FE1C935C1300DC7418 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Documents/FacebookSDKs-iOS-20160210/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		E4E1A6421B859CF000D0ED47 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		E4E1A6441B85B14300D0ED47 /* StudentsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsList.swift; sourceTree = "<group>"; };
 		E4E1A6461B871B6D00D0ED47 /* MapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
@@ -109,9 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E47594161C5699D7001B34D8 /* FBSDKLoginKit.framework in Frameworks */,
-				E47594141C568D5C001B34D8 /* FBSDKCoreKit.framework in Frameworks */,
-				E47594181C56DAC3001B34D8 /* FBSDKLoginKit.framework in Frameworks */,
+				E47989FD1C935C0900DC7418 /* FBSDKLoginKit.framework in Frameworks */,
+				E47989FB1C935BEF00DC7418 /* FBSDKCoreKit.framework in Frameworks */,
+				E47989FF1C935C1300DC7418 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +131,7 @@
 				E45ED6D21BBED3720079022C /* On the Map */,
 				E404A1811B7148A200254797 /* On the MapTests */,
 				E404A16A1B7148A200254797 /* Products */,
+				E47989F91C9354EE00DC7418 /* Framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,9 +147,6 @@
 		E404A16C1B7148A200254797 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E47594171C56DAC3001B34D8 /* FBSDKLoginKit.framework */,
-				E47594151C5699D7001B34D8 /* FBSDKLoginKit.framework */,
-				E47594131C568D5C001B34D8 /* FBSDKCoreKit.framework */,
 				E404A16D1B7148A200254797 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -249,6 +247,16 @@
 			);
 			name = Model;
 			path = "On the Map";
+			sourceTree = "<group>";
+		};
+		E47989F91C9354EE00DC7418 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E47989FE1C935C1300DC7418 /* FBSDKShareKit.framework */,
+				E47989FA1C935BEF00DC7418 /* FBSDKCoreKit.framework */,
+				E47989FC1C935C0900DC7418 /* FBSDKLoginKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/eh/Downloads/FacebookSDKs-iOS-20150810",
+					"/Users/eh/Documents/FacebookSDKs-iOS-20160210",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/On",
 					the,
@@ -535,7 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/eh/Downloads/FacebookSDKs-iOS-20150810",
+					"/Users/eh/Documents/FacebookSDKs-iOS-20160210",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/On",
 					the,
